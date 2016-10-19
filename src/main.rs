@@ -18,8 +18,6 @@ fn main() {
 
     for c in stdin().keys() {
         match c.unwrap() {
-            // Exit.
-            Key::Char('q') => break,
             Key::Char('\n') => {
                 if selected_index == 0 {
                     println!("Hello!\n\r");
@@ -29,11 +27,6 @@ fn main() {
                     break;
                 }
             },
-            Key::Char(c)   => println!("{}", c),
-            Key::Alt(c)    => println!("Alt-{}", c),
-            Key::Ctrl(c)   => println!("Ctrl-{}", c),
-            Key::Left      => println!("<left>"),
-            Key::Right     => println!("<right>"),
             Key::Up        => {
                 if selected_index == 0 { 
                     selected_index = menu_options.len() - 1 
